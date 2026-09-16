@@ -17,6 +17,15 @@ app.get("/ping", async (_req : Request, res: Response) => {
 
 }); 
 
+app.get('/orange', async (_req : Request, res: Response) => {
+    res.json({
+        message: "orange is a fruit",
+        message2: "orange is also a color",
+        message3: "orange is also a programming language",
+        message4: "i like oranges"
+    });
+});
+
  
 
 app.listen(PORT, () => { 
