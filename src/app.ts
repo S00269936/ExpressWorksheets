@@ -26,6 +26,11 @@ app.get('/orange', async (_req : Request, res: Response) => {
     });
 });
 
+app.use((req, _res, next) => {
+    console.log(`${req.method} ${req.originalUrl}`);
+    next();
+})
+
  
 
 app.listen(PORT, () => { 
