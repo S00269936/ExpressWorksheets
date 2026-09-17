@@ -8,7 +8,8 @@ const PORT = process.env.PORT || 5050;
  
 
 const app: Application = express();
-app.use('/cars', carRoutes); //tell app to use the carRoutes for any requests that start with /cars
+
+
 app.get("/ping", async (_req : Request, res: Response) => { 
     res.json({ 
 
@@ -33,7 +34,8 @@ app.use((req, _res, next) => {
     next();
 })
 
- 
+ app.use('/api/v1/cars', carRoutes); //tell app to use the carRoutes for any requests that start with /cars
+app.use(express.json()); 
 
 app.listen(PORT, () => { 
 
