@@ -4,7 +4,7 @@ import {connectDB} from './config/database';
 
 
 
-const PORT = process.env.PORT || 5050; 
+const PORT = env.port;
 
  
 
