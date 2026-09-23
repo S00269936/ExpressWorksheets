@@ -1,5 +1,6 @@
 import express, {Application, Request, Response} from "express" ; 
 import carRoutes from './routes/cars';
+import {connectDB} from './config/database';
 
 
 
@@ -38,8 +39,11 @@ app.use(express.json());
  app.use('/api/v1/cars', carRoutes); //tell app to use the carRoutes for any requests that start with /cars
 
 
-app.listen(PORT, () => { 
+const startServer = async () => {
+  await connectDB();
 
- console.log("Server is running on port", PORT); 
-
- }); 
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
+};
+startServer();
