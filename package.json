@@ -16,8 +16,13 @@
   "type": "commonjs",
   "dependencies": {
     "dotenv": "^18.0.3",
+<<<<<<< HEAD
     "env": "^0.0.2",
     "express": "^5.2.1"
+=======
+    "express": "^5.2.1",
+    "mongoose": "^9.10.2"
+>>>>>>> worksheet3
   },
   "devDependencies": {
     "@types/express": "^5.0.6",
