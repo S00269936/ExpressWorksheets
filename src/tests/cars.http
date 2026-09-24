@@ -17,7 +17,8 @@ content-type: application/json
 
 ###
 GET  {{endpoint}} HTTP/3.0 
-content-type: application/json 
+content-type: application/json
+x-api-key: blahblah 
 
  
 
