@@ -6,9 +6,10 @@
 # @name postACar
 POST {{endpoint}} HTTP/1.1
 content-type: application/json
+x-api-key: blahblah
 
 { "make" : "Mercedes",
-  "model" : "E-Class"
+  "model" : "C-Class"
 }
 
 ###
@@ -26,12 +27,14 @@ x-api-key: blahblah
 
 GET  {{endpoint}}/{{newCar}} HTTP/3.0 
 content-type: application/json
+x-api-key: blahblah
 ### 
 
  
 
 DELETE  {{endpoint}}/id HTTP/3.0 
-content-type: application/json 
+content-type: application/json
+x-api-key: blahblah
 
  
 
@@ -40,9 +43,9 @@ content-type: application/json
  
 
 ###
-PUT {{endpoint}}/sillycarID HTTP/1.1
-
+PUT {{endpoint}}/id HTTP/1.1
 Content-Type: application/json
+x-api-key: blahblah
 
 {
     "name": "red vroom vroom"
