@@ -6,8 +6,8 @@ POST {{endpoint}} HTTP/1.1
 Content-Type: application/json
 
 {
-    "model": "Honda",
-    "make": "Civic"
+    "model": "Toyota",
+    "make": "Corolla"
 }
 
  
@@ -16,7 +16,6 @@ Content-Type: application/json
 
 ###
 GET  {{endpoint}} HTTP/3.0 
-
 content-type: application/json 
 
  
@@ -24,14 +23,12 @@ content-type: application/json
 ### 
 
 GET  {{endpoint}}/sillycarID HTTP/3.0 
-
 content-type: application/json
 ### 
 
  
 
-DELETE  {{endpoint}}/sillycarID HTTP/3.0 
-
+DELETE  {{endpoint}}/idHere HTTP/3.0 
 content-type: application/json 
 
  
@@ -42,6 +39,7 @@ content-type: application/json
 
 ###
 PUT {{endpoint}}/sillycarID HTTP/1.1
+
 Content-Type: application/json
 
 {
