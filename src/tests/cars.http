@@ -8,8 +8,8 @@ POST {{endpoint}} HTTP/1.1
 content-type: application/json
 x-api-key: blahblah
 
-{ "make" : "Mercedes",
-  "model" : "C-Class"
+{ "make" : "Hyundai",
+  "model" : "Elantra",
 }
 
 ###
