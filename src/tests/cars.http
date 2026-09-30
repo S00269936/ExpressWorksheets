@@ -9,9 +9,9 @@ POST {{endpoint}} HTTP/1.1
 content-type: application/json
 x-api-key: blahblah
 
-{ "make" : "Ferrari",
-  "model" : "Blue",
-  "year" : 1998
+{ "make" : "Lamborghini",
+  "model" : "Bull",
+  "year" : 2002
 }
 
 ###
