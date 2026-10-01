@@ -7,6 +7,19 @@ const carService = new CarService();
 
 export class CarController{
     getCars = async (_req: Request, res: Response): Promise<void> => {
+          /**
+     * @openapi
+     * /cars:
+     *   get:
+     *     summary: Retrieve all cars
+     *     tags:
+     *       - Cars
+     *     responses:
+     *       200:
+     *         description: Successfully retrieved cars
+     *       500:
+     *         description: Internal server error
+     */
 
     try {
       const cars = await carService.getAllCars();

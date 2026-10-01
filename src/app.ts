@@ -42,7 +42,7 @@ app.use((req, _res, next) => {
 })
 
 app.use(express.json()); 
- app.use('/api/v1/cars', logRequest, authenticateKey, carRoutes); //tell app to use the carRoutes for any requests that start with /cars
+ app.use('/api/v1/cars', logRequest, carRoutes); //tell app to use the carRoutes for any requests that start with /cars
 
     app.use(
     '/api-docs',
