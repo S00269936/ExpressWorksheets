@@ -105,6 +105,28 @@ export class CarController{
 
 
     deleteCar = async (_req: Request, res: Response): Promise<void> => {
+          /**
+    * @openapi
+    * /cars/{id}:
+    *   delete:
+    *     summary: Delete a car by ID
+    *     tags:
+    *       - Cars
+    *     parameters:
+    *       - in: path
+    *         name: id
+    *         required: true
+    *         schema:
+    *           type: string
+    *     responses:
+    *       200:
+    *         description: Car found
+    *       404:
+    *         description: Car not found
+    *       500:
+    *         description: Internal server error
+    */
+
     try {
       const id = Array.isArray(_req.params.id) ? _req.params.id[0] : _req.params.id;
       const deletedCar = await carService.deleteCar(id);
