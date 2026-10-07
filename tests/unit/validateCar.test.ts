@@ -1,8 +1,8 @@
 import { createCarZSchema } from "../../src/models/cars";
 
 const validCar = {
-    "make": "Una",
-    "model": "0871234567",
+    "make": "Honda",
+    "model": "Civic",
     "year": 1980
 }
 
