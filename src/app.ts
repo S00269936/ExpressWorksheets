@@ -9,7 +9,7 @@ import swaggerUi from 'swagger-ui-express';
 
 
 
-const PORT = env.port;
+//const PORT = env.port;
 
  
 
@@ -51,7 +51,7 @@ app.use(express.json());
     ); // serves swagger documentation at /api-docs
 
 
-
+/*
 const startServer = async () => {
   await connectDB();
 
@@ -59,4 +59,6 @@ const startServer = async () => {
     console.log(`Server running on port ${PORT}`);
   });
 };
-startServer();
+startServer();*/
+
+export { app }; // export the app for testing purposes
