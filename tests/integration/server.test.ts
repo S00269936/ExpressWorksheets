@@ -2,7 +2,7 @@ import request from "supertest";
 import { app } from "../../src/app";
 
 describe("GET /ping", () => {
-    it("should return hello from Una", async () => {
+    it("hello from Zac", async () => {
         const response = await request(app)
             .get("/ping");
 
