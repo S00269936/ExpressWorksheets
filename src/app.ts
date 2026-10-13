@@ -36,6 +36,17 @@ app.get('/orange', async (_req : Request, res: Response) => {
     });
 });
 
+app.get("/pong", (_req : Request, res: Response) => {
+  console.log("Received request to /pong");
+  throw new Error("Simulated error in /pong route");
+});
+
+app.get("/pung", async (_req : Request, res: Response) => {
+  console.log("Received request to /pung");
+   throw new Error("Simulated error in /pung route");
+});
+
+
 app.use((req, _res, next) => {
     console.log(`${req.method} ${req.originalUrl}`);
     next();
