@@ -7,6 +7,7 @@ import { logRequest } from "./middleware/log.middleware";
 import { swaggerSpec } from "./config/swagger";
 import swaggerUi from 'swagger-ui-express';
 import { errorHandler } from "./middleware/errorhandler.middleware";
+import cors from 'cors';
 
 
 
@@ -53,6 +54,7 @@ app.use((req, _res, next) => {
     next();
 })
 
+app.use(cors());
 app.use(express.json()); 
  app.use('/api/v1/cars', logRequest, carRoutes); //tell app to use the carRoutes for any requests that start with /cars
 
