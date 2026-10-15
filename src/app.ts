@@ -6,6 +6,7 @@ import {authenticateKey} from './middleware/auth.middleware';
 import { logRequest } from "./middleware/log.middleware";
 import { swaggerSpec } from "./config/swagger";
 import swaggerUi from 'swagger-ui-express';
+import { errorHandler } from "./middleware/errorhandler.middleware";
 
 
 
@@ -60,6 +61,8 @@ app.use(express.json());
     swaggerUi.serve,
     swaggerUi.setup(swaggerSpec)
     ); // serves swagger documentation at /api-docs
+
+    app.use(errorHandler)
 
 
 /*
