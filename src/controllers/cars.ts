@@ -52,18 +52,11 @@ export class CarController{
     *         description: Internal server error
     */
 
-    try {
-      const id = Array.isArray(req.params.id) ? req.params.id[0] : req.params.id;
-      const car = await carService.getCarById(id);
-      if (!car) {
-        res.status(404).json({ message: 'Car not found' });
-        return;
-      }
-      res.status(200).json(car);
-    } catch (error) {
-      res.status(500).json({ message: 'Error fetching car', error });
-    }
-  };
+          const id = Array.isArray(req.params.id) ? req.params.id[0] : req.params.id;
+          const car = await carService.getCarById(id);
+          res.status(200).json(car);
+      };
+    
 
     createCar = async (req: Request, res: Response): Promise<void> => {
             /**
@@ -87,43 +80,17 @@ export class CarController{
        *       500:
        *         description: Internal server error
        */
+      const car = await carService.createCar(req.body);
+      res.status(201).json(car);
 
-    try {
-      const validation = createCarZSchema.safeParse(req.body);
-      console.log;
-      if (!validation.success){
-        res.status(400).json({message: 'Invalid car data', errors:
-          validation.error.issues
-        });
-        return;
-      }
-      const newCar = await carService.createCar(req.body);
-      res.status(201).json(newCar);
-    } catch (error) {
-      res.status(500).json({ message: 'Error inserting into MongoDB', error });
-    }
-  };
+    };
 
     updateCar = async (req: Request, res: Response): Promise<void> => {
-    try {
-      const validation = updateCarZSchema.safeParse(req.body);
-      console.log;
-      if (!validation.success){
-        res.status(400).json({message: 'Invalid car data', errors:
-          validation.error.issues
-        });
-      }
       const id = Array.isArray(req.params.id) ? req.params.id[0] : req.params.id;
-      const updatedCar = await carService.updateCar(id, req.body);
-      if (!updatedCar) {
-        res.status(404).json({ message: 'Car not found' });
-        return;
-      }
+      const carData = req.body;
+      const updatedCar = await carService.updateCar(id, carData);
       res.status(200).json(updatedCar);
-    } catch (error) {
-      res.status(500).json({ message: 'Error updating car', error });
-    }
-  };
+    };
 
 
     deleteCar = async (_req: Request, res: Response): Promise<void> => {
@@ -148,18 +115,9 @@ export class CarController{
     *       500:
     *         description: Internal server error
     */
-
-    try {
-      const id = Array.isArray(_req.params.id) ? _req.params.id[0] : _req.params.id;
-      const deletedCar = await carService.deleteCar(id);
-      if (!deletedCar) {
-        res.status(404).json({ message: 'Car not found' });
-        return;
-      }
-      res.status(200).json({ message: 'Car deleted successfully' });
-    } catch (error) {
-      res.status(500).json({ message: 'Error deleting car', error });
-    }
-  };
-
+     
+        const id = Array.isArray(_req.params.id) ? _req.params.id[0] : _req.params.id;
+        await carService.deleteCar(id);
+        res.status(200).json({ message: 'Car deleted successfully' });
+    };
 }

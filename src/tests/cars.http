@@ -9,9 +9,9 @@ POST {{endpoint}} HTTP/1.1
 content-type: application/json
 x-api-key: blahblah
 
-{ "make" : "silly",
-  "model" : "car",
-  "year" : 2002
+{ "make" : "Volkswagen",
+  "model" : "Jetta",
+  "year" : 1992
 }
 
 ###
@@ -34,7 +34,7 @@ x-api-key: blahblah
 
  
 
-DELETE  {{endpoint}}/id HTTP/3.0 
+DELETE  {{endpoint}}/6ab53b60271e375b9a2f8bb2 HTTP/3.0 
 content-type: application/json
 x-api-key: blahblah
 
@@ -45,12 +45,12 @@ x-api-key: blahblah
  
 
 ###
-PUT {{endpoint}}/6abcd131b30bb826254dd4f2 HTTP/1.1
+PUT {{endpoint}}/6ab53b60271e375b9a2f8bb2 HTTP/1.1
 Content-Type: application/json
 x-api-key: blahblah
 
 {
-    "make" : "Honda",
-    "model" : "Accord",
-    "year": 2005
+    "make" : "A6",
+    "model" : "Audi",
+    "year": 2012
 }
