@@ -20,7 +20,7 @@ export class CarService {
   async createCar(carData: ICar): Promise<HydratedDocument<ICar>> {
     const car = new CarModel(carData);
     if (!car) throw new NotFoundError('Car');
-    return car;
+    return await car.save();
   }
 
   async updateCar(id: string, carData: Partial<ICar>): Promise<ICar | null> {

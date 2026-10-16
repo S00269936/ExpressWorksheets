@@ -10,8 +10,8 @@ content-type: application/json
 x-api-key: blahblah
 
 { "make" : "Volkswagen",
-  "model" : "Jetta",
-  "year" : 1992
+  "model" : "TRock",
+  "year" : 2010
 }
 
 ###
@@ -34,7 +34,7 @@ x-api-key: blahblah
 
  
 
-DELETE  {{endpoint}}/6ab53b60271e375b9a2f8bb2 HTTP/3.0 
+DELETE  {{endpoint}}/id HTTP/3.0 
 content-type: application/json
 x-api-key: blahblah
 
@@ -50,7 +50,7 @@ Content-Type: application/json
 x-api-key: blahblah
 
 {
-    "make" : "A6",
+    "make" : "A4",
     "model" : "Audi",
     "year": 2012
 }
