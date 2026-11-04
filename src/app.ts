@@ -56,6 +56,7 @@ app.use((req, _res, next) => {
 
 app.use(cors());
 app.use(express.json()); 
+app.use((_req, _res, next) => setTimeout(next, 2000));
  app.use('/api/v1/cars', logRequest, carRoutes); //tell app to use the carRoutes for any requests that start with /cars
 
     app.use(
