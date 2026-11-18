@@ -45,6 +45,12 @@ export interface TokenPayload {
           throw error;
         }
       }
+      async getUserById(id: string): Promise<PublicUser> {
+        const user = await UserModel.findById(id).lean();
+        if (!user) throw new UnauthorizedError('User not found');
+        return { _id: user._id.toString(), name: user.name, email: user.email };
+      }
+    
       createToken(payload: TokenPayload): string {
         return jwt.sign(payload, env.jwtSecret, {
           algorithm: 'HS256',
@@ -77,6 +83,8 @@ export interface TokenPayload {
     
         return this.createToken({ sub: user._id.toString(), email: user.email });
       }
+
+      
     
   }
   

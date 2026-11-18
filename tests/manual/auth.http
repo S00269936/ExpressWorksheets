@@ -1,6 +1,7 @@
 @endpoint = http://localhost:5050/api/v1/auth/register
 @login = http://localhost:5050/api/v1/auth/login
 
+@jwt = http://localhost:5050/api/v1/auth/me
 POST {{endpoint}} HTTP/1.1
 content-type: application/json
 
@@ -19,3 +20,8 @@ content-type: application/json
     "email": "s00269936@atu.ie",
     "password": "password1"
 }
+
+###
+
+GET {{jwt}} HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2YWZkN2I3NGViYjhiNjYzNjAwNTE2YTciLCJlbWFpbCI6InMwMDI2OTkzNkBhdHUuaWUiLCJpYXQiOjE3OTUwMDQ4ODIsImV4cCI6MTc5NTAwNTAwMn0.bPdAPlCV6CsXzrcNqqnx5Wj8ymr42D5hyDRnho-l0_8
