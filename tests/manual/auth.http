@@ -1,0 +1,10 @@
+@endpoint = http://localhost:5050/api/v1/auth/register
+
+POST {{endpoint}} HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Zac Herrity",
+    "email" : "s00269936@atu.ie",
+    "password": "password1"
+}

@@ -63,7 +63,7 @@ const userSchema = new Schema<IUser>(
 
 export interface IUser {
   name: string;
-  email: string;
+  email: string, unique : true;
   passwordHash: string;
 }
 

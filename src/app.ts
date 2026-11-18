@@ -1,13 +1,11 @@
 import express, {Application, Request, Response} from "express" ; 
 import carRoutes from './routes/cars';
-import { env } from "./config/env";
-import {connectDB} from './config/database';
-import {authenticateKey} from './middleware/auth.middleware';
 import { logRequest } from "./middleware/log.middleware";
 import { swaggerSpec } from "./config/swagger";
 import swaggerUi from 'swagger-ui-express';
 import { errorHandler } from "./middleware/errorhandler.middleware";
 import cors from 'cors';
+import authRoutes from './routes/auth';
 
 
 
@@ -47,15 +45,15 @@ app.get("/pung", async (_req : Request, res: Response) => {
   console.log("Received request to /pung");
    throw new Error("Simulated error in /pung route");
 });
-
-
+app.use(express.json()); 
+app.use('/api/v1/auth', authRoutes);
 app.use((req, _res, next) => {
     console.log(`${req.method} ${req.originalUrl}`);
     next();
 })
 
 app.use(cors());
-app.use(express.json()); 
+
 app.use((_req, _res, next) => setTimeout(next, 2000));
  app.use('/api/v1/cars', logRequest, carRoutes); //tell app to use the carRoutes for any requests that start with /cars
 
