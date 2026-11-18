@@ -2,6 +2,7 @@
 @login = http://localhost:5050/api/v1/auth/login
 
 @jwt = http://localhost:5050/api/v1/auth/me
+@delete = http://localhost:5050/api/v1/auth/:id
 POST {{endpoint}} HTTP/1.1
 content-type: application/json
 
@@ -17,11 +18,18 @@ POST {{login}} HTTP/1.1
 content-type: application/json
 
 {
-    "email": "s00269936@atu.ie",
-    "password": "password1"
+    "email": "s00279937@atu.ie",
+    "password": "password0"
 }
 
 ###
 
 GET {{jwt}} HTTP/1.1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2YWZkN2I3NGViYjhiNjYzNjAwNTE2YTciLCJlbWFpbCI6InMwMDI2OTkzNkBhdHUuaWUiLCJpYXQiOjE3OTUwMDQ4ODIsImV4cCI6MTc5NTAwNTAwMn0.bPdAPlCV6CsXzrcNqqnx5Wj8ymr42D5hyDRnho-l0_8
+
+###
+
+
+DELETE {{delete}}/cars/6ab39d1a1f7c99fb3bce01a4 HTTP/1.1
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2YWZkN2VlOTYxNTFkNjQxZWMyYzdmYzAiLCJlbWFpbCI6InMwMDI3OTkzN0BhdHUuaWUiLCJpYXQiOjE3OTUwMDU2MjAsImV4cCI6MTc5NTAwNTc0MH0.0Y8zX_ultuSV1KfVap0f5Cv6J1TdJOZv_wxqQwh_yBA
